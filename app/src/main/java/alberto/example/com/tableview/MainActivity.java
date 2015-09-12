@@ -42,17 +42,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initData() {
-        Data data1 = new Data("13:45", "On time", "15:45", "origin station", "destination "
+        Data data1 = new Data("13:45", "On time", "15:45", "Origin station", "Destination "
                 + "station", "company", "live times");
-        Data data2 = new Data(null, "On time", null, "origin station very very very very very "
-                + "very very very very very long name", "destination station very very very very "
+        Data data2 = new Data(null, null, null, "Origin station very very very very very "
+                + "very very very very very long name", "Destination station very very very very "
                 + "very"
                 + " very very very very very long name", "company", null);
         Data data3 = new Data("13:45", "Exp: 14:00", "00:00", "origin station", "destination "
                 + "station", "company", "very very very very long button label");
 
-        Data data4 = new Data("13:45", "On time", "15:45", "origin station very very very very "
-                + "very very very very very very long name", "destination station very very very"
+        Data data4 = new Data("13:45", "On time", "15:45", "Origin station very very very very "
+                + "very very very very very very long name", "Destination station very very very"
                 + " very very very very very very very long name", "company", null);
         mData = new ArrayList<>(Arrays.asList(data1, data2, data3, data4, data1, data2, data3, data4,
                                               data1, data2, data3, data4,data1, data2, data3, data4));
