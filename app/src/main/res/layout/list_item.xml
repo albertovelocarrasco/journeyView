@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginTop="8dp"
+        card_view:cardBackgroundColor="@android:color/holo_red_light"
+        card_view:cardCornerRadius="4dp">
+
+        <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                     android:layout_width="match_parent"
+                     android:layout_height="match_parent"
+                     android:stretchColumns="1,2">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="Open..."/>
+
+                <TextView
+                    android:layout_column="3"
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="Ctrl-O"/>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="Save..."/>
+
+                <TextView
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="Ctrl-S"/>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="Save As..."/>
+
+                <TextView
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="Ctrl-Shift-S"/>
+            </TableRow>
+
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090"/>
+
+            <TableRow>
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="X"/>
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="Import..."/>
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="X"/>
+
+                <TextView
+                    android:padding="3dip"
+                    android:text="Export..."/>
+
+                <TextView
+                    android:gravity="right"
+                    android:padding="3dip"
+                    android:text="Ctrl-E"/>
+            </TableRow>
+
+            <View
+                android:layout_height="2dip"
+                android:background="#FF909090"/>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:padding="3dip"
+                    android:text="Quit"/>
+            </TableRow>
+        </TableLayout>
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>
