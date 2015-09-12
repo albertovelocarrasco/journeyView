@@ -6,62 +6,37 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import java.util.Arrays;
 import java.util.List;
 
 /**
  * Created by Alberto Velo Carrasco on 12/09/15.
  */
-public class ListAdapter extends RecyclerView.Adapter<ListAdapter.CustomViewHolder> {
+public class ListAdapter extends RecyclerView.Adapter<JourneyViewHolder> {
 
-    private static final int EMPTY_VIEW = 1;
-    private static final int CARD_VIEW = 2;
-    List<Integer> mData;
-    boolean showEmptyView;
+    List<Data> mData;
     Context mContext;
 
     public ListAdapter(Context context) {
         mContext = context;
-        setHasStableIds(true);
     }
 
-    public void setData(List<Integer> data) {
-        if (data == null) {
-            showEmptyView = true;
-            mData = Arrays.asList(1);
-        } else {
-            showEmptyView = false;
-            mData = data;
-        }
+    public void setData(List<Data> data) {
+        mData = data;
         notifyDataSetChanged();
-    }
-
-    @Override
-    public int getItemViewType(int position) {
-        if (showEmptyView) {
-            return EMPTY_VIEW;
-        } else {
-            return CARD_VIEW;
-        }
     }
 
     @Override
     public long getItemId(int position) {
         if (isDataNotEmpty() && mData.size() > position) {
-            return mData.get(position);
+            return mData.get(position).hashCode();
         } else {
             return 0;
         }
     }
 
     @Override
-    public ListAdapter.CustomViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        switch (viewType) {
-            case EMPTY_VIEW:
-                return new EmptyViewHolder(inflateLayout(parent, R.layout.empty_view));
-            default:
-                return new CardViewHolder(inflateLayout(parent, R.layout.list_item));
-        }
+    public JourneyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        return new JourneyViewHolder(inflateLayout(parent, R.layout.list_item));
     }
 
     private View inflateLayout(ViewGroup parent, int resourceId) {
@@ -70,9 +45,16 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.CustomViewHold
 
     @Override
     public void onBindViewHolder(
-            CustomViewHolder holder, int position) {
+            JourneyViewHolder holder, int position) {
         if (isDataNotEmpty() && mData.size() > position) {
-
+            Data data = mData.get(position);
+            holder.setDepartureStation(data.originStationName);
+            holder.setDepartureStatus(data.departureStatus);
+            holder.setDepartureTime(data.departureTime);
+            holder.setCompanyName(data.company);
+            holder.setArrivalStation(data.destinationStationName);
+            holder.setArrivalTime(data.arrivalTime);
+            holder.setButtonLabel(data.buttonLabel);
         }
 
     }
@@ -86,10 +68,4 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.CustomViewHold
         return mData != null ? mData.size() : 0;
     }
 
-    class CustomViewHolder extends RecyclerView.ViewHolder {
-
-        public CustomViewHolder(View itemView) {
-            super(itemView);
-        }
-    }
 }

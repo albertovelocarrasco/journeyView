@@ -12,6 +12,19 @@ public class Data {
     String company;
     String buttonLabel;
 
+    public Data(
+            String departureTime, String departureStatus, String arrivalTime,
+            String originStationName, String destinationStationName, String company,
+            String buttonLabel) {
+        this.departureTime = departureTime;
+        this.departureStatus = departureStatus;
+        this.arrivalTime = arrivalTime;
+        this.originStationName = originStationName;
+        this.destinationStationName = destinationStationName;
+        this.company = company;
+        this.buttonLabel = buttonLabel;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
