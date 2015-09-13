@@ -19,88 +19,124 @@
         card_view:cardBackgroundColor="#DDDDDD"
         card_view:cardCornerRadius="4dp"
         card_view:contentPadding="8dp">
+
         <RelativeLayout
+            android:id="@+id/container"
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-        <ImageView
-            android:id="@+id/icon"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignTop="@+id/departure_time_container"
-            android:layout_alignBottom="@+id/arrival_time_container"
-            android:background="@drawable/live_green"
-            android:layout_marginTop="4dp"/>
-        <LinearLayout
-            android:id="@+id/departure_time_container"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="right"
-            android:layout_toRightOf="@+id/icon">
-            <TextView
-                android:id="@+id/departure_time"
-                android:textStyle="bold"
-                tools:text="15:34"
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignBottom="@+id/arrival_time_container"
+                android:layout_alignTop="@+id/departure_time_container"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/live_green"/>
+
+            <LinearLayout
+                android:id="@+id/departure_time_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"/>
+                android:layout_toRightOf="@+id/icon"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/departure_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="4dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="15:34"/>
+
+                <TextView
+                    android:id="@+id/departure_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/departure_station"
+                    tools:text="Exp. 15:36"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/arrival_time_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignRight="@+id/departure_time_container"
+                android:layout_alignTop="@+id/arrival_station"
+                android:gravity="right"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/arrival_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    tools:text="16:34"/>
+            </LinearLayout>
+
             <TextView
-                android:id="@+id/departure_status"
-                tools:text="Exp. 15:36"
+                android:id="@+id/departure_station"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@+id/departure_time_container"
+                android:paddingBottom="4dp"
+                android:textSize="20sp"
+                tools:text="Origin station"/>
+
+            <TextView
+                android:id="@+id/train_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/departure_station"
                 android:layout_below="@+id/departure_station"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                tools:text="Virgin trains"/>
 
-        </LinearLayout>
-        <LinearLayout
-            android:id="@+id/arrival_time_container"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_alignTop="@+id/arrival_station"
-            android:layout_alignRight="@+id/departure_time_container"
-            android:gravity="right">
-            <TextView
-                android:id="@+id/arrival_time"
-                tools:text="16:34"
-                android:textStyle="bold"
+            <LinearLayout
+                android:id="@+id/seat_container"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="20sp"/>
-        </LinearLayout>
+                android:layout_alignLeft="@+id/departure_station"
+                android:layout_below="@+id/train_company"
+                android:paddingTop="4dp"
+                android:orientation="vertical">
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/departure_station"
-            tools:text="Origin station"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="20sp"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@+id/departure_time_container"/>
-        <TextView
-            android:id="@+id/train_company"
-            tools:text="Virgin trains"
-            android:layout_below="@+id/departure_station"
-            android:layout_alignLeft="@+id/departure_station"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <Button
-            android:id="@+id/button"
-            tools:text="live times"
-            android:layout_width="104dp"
-            android:layout_alignLeft="@+id/departure_station"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/train_company"/>
-        <TextView
-            android:id="@+id/arrival_station"
-            android:layout_below="@+id/button"
-            android:textSize="20sp"
-            tools:text="Arrival station asfas safaf asfkmnas asflm"
-            android:layout_alignLeft="@+id/departure_station"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <LinearLayout
+                android:id="@+id/seat_icon_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:layout_marginRight="20dp"
+                android:layout_toLeftOf="@+id/seat_container"
+                android:layout_alignTop="@+id/seat_container"
+                android:layout_alignBottom="@+id/seat_container"
+                android:orientation="vertical">
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="104dp"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/departure_station"
+                android:layout_below="@+id/seat_container"
+                android:layout_marginBottom="4dp"
+                tools:text="live times"/>
+
+            <TextView
+                android:id="@+id/arrival_station"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/departure_station"
+                android:layout_below="@+id/button"
+                android:textSize="20sp"
+                tools:text="Arrival station asfas safaf asfkmnas asflm"/>
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

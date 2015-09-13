@@ -36,7 +36,7 @@ public class ListAdapter extends RecyclerView.Adapter<JourneyViewHolder> {
 
     @Override
     public JourneyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        return new JourneyViewHolder(inflateLayout(parent, R.layout.list_item));
+        return new JourneyViewHolder(inflateLayout(parent, R.layout.list_item), mContext);
     }
 
     private View inflateLayout(ViewGroup parent, int resourceId) {
@@ -55,8 +55,8 @@ public class ListAdapter extends RecyclerView.Adapter<JourneyViewHolder> {
             holder.setArrivalStation(data.destinationStationName);
             holder.setArrivalTime(data.arrivalTime);
             holder.setButtonLabel(data.buttonLabel);
+            holder.setSeatReservations(data.seatRervation);
         }
-
     }
 
     private boolean isDataNotEmpty() {
