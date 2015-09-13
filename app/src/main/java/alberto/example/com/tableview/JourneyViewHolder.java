@@ -4,9 +4,7 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -85,7 +83,7 @@ public class JourneyViewHolder extends RecyclerView.ViewHolder {
                 mSeatTextContainer.addView(createReservationView(reservation));
                 mSeatIconContainer.addView(createReservationIcon());
             }
-        }else{
+        } else {
             mSeatTextContainer.setVisibility(View.GONE);
             mSeatIconContainer.setVisibility(View.GONE);
         }

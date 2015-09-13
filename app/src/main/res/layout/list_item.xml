@@ -120,23 +120,25 @@
                 android:orientation="vertical">
             </LinearLayout>
 
-            <Button
-                android:id="@+id/button"
-                android:layout_width="104dp"
-                android:layout_height="wrap_content"
-                android:layout_alignLeft="@+id/departure_station"
-                android:layout_below="@+id/seat_container"
-                android:layout_marginBottom="4dp"
-                tools:text="live times"/>
-
             <TextView
                 android:id="@+id/arrival_station"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@+id/departure_station"
-                android:layout_below="@+id/button"
+                android:layout_below="@+id/seat_container"
                 android:textSize="20sp"
                 tools:text="Arrival station asfas safaf asfkmnas asflm"/>
+
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/arrival_station"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="4dp"
+                tools:text="live times"/>
+
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </LinearLayout>

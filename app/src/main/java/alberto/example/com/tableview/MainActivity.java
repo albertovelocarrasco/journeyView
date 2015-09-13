@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
                         + " very very very very very long name", "company", null, null);
         Data data3 = new Data(
                 "13:45", null, "00:00", "origin station", "destination "
-                + "station", "company", "very very very very long button label", getReservations
+                + "station", "company", "3 stops, 15 mins View", getReservations
                 (8));
 
         Data data4 = new Data(
